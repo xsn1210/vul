@@ -11,18 +11,18 @@ Test process:
 Download address: this website page https://cn.wordpress.org/plugins/ input plugin's name
 EventON to download https://cn.wordpress.org/plugins/eventon-lite/
 
-![image-xss1.1[EventON]](xss1.1[EventON].png)
+![image-xss1.1[EventON]](images/xss1.1[EventON].png)
 
-![image-xss1.2[EventON]](xss1.2[EventON].png)
+![image-xss1.2[EventON]](images/xss1.2[EventON].png)
 
 2. Navigate to the URL:
 /wp-admin/admin.php? page=eventon&tab=evcal_1 or /wp-admin/admin.php? page=eventon&tab=evcal_2 or /wp-admin/admin.php? page=eventon&tab=evcal_3 or /wp-admin/admin.php? page=eventon&tab=evcal_4 or /wp-admin/admin.php? page=eventon&tab=evcal_5 and other pages
 
-![image-xss1.3[EventON]](xss1.3[EventON].png)
+![image-xss1.3[EventON]](images/xss1.3[EventON].png)
 
 3. Launch Burp Suite to capture network traffic. Use Burpsuite to capture and change packets for detection:
 
-![image-xss1.4[EventON]](xss1.4[EventON].png)
+![image-xss1.4[EventON]](images/xss1.4[EventON].png)
 
 4.Change the value of tab to "oNmOuSeOvEr=prompt(1)//, and send the modified url.
 /wp-admin/admin.php?page=eventon&tab="oNmOuSeOvEr=prompt(1)//
@@ -32,11 +32,11 @@ Or change the value of the argument tab to "oNmOuSeOvEr=alert(document.cookie)//
 
 5. A pop-up window will appear on the web page, and an alarm box showing 1 will pop up, triggering XSS, indicating that there is cross-site vulnerability, recording the vulnerability, and stopping the test.
 
-![image-xss1.5[EventON]](xss1.5[EventON].png)
+![image-xss1.5[EventON]](images/xss1.5[EventON].png)
 
 A pop-up warning box showing cookies
 
-![image-xss1.6[EventON]](xss1.6[EventON].png)
+![image-xss1.6[EventON]](images/xss1.6[EventON].png)
 
 Attack steps:
 
